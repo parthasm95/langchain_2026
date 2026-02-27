@@ -31,6 +31,7 @@ extract_output = RunnableLambda(lambda x: x["output"])
 parse_output = RunnableLambda(lambda x: output_parser.parse(x))
 chain = agent_executor | extract_output | parse_output
 
+
 def main():
     print("hello from Langchain-react-agent test")
     result = chain.invoke(
@@ -39,6 +40,7 @@ def main():
         }
     )
     print(result)
+
 
 if __name__ == "__main__":
     main()

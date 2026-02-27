@@ -22,8 +22,10 @@ if __name__ == "__main__":
     embeddings = OpenAIEmbeddings()
 
     print("Initializing Pinecone vector store...")
-    vectorstore = PineconeVectorStore(index_name=os.getenv("INDEX_NAME"), embedding=embeddings)
-    
+    vectorstore = PineconeVectorStore(
+        index_name=os.getenv("INDEX_NAME"), embedding=embeddings
+    )
+
     print("Adding chunks to Pinecone vector store...")
     vectorstore.add_documents(chunks)
     print("Documents ingested successfully!")
